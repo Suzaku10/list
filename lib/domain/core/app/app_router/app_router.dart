@@ -11,4 +11,5 @@ import 'package:credibook_challange/presentation/splash/splash_page.dart';
     AutoRoute(page: DetailMemePage),
   ],
 )
+
 class $AppRouter {}
