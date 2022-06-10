@@ -39,8 +39,9 @@ Test For Credibook
 ### Misc
  - To Generate localization use plugin in android studio/vscode Flutter intl, every added new key value in arb file, this will auto generate localization.
  - https://api.imgflip.com/get_memes for open source api
+
 ## Find Me on :
  - [linkedIn](https://www.linkedin.com/in/yudhistira-yoga-0872a6184)
  - [Email](mailto:Yudhistiray198@gmail.com)
  - [Github](https://github.com/Suzaku10)
-# list
+
