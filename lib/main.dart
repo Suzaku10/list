@@ -1,11 +1,14 @@
 import 'package:credibook_challange/utils/i10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:injectable/injectable.dart';
 
 import 'domain/core/app/app_const.dart';
 import 'domain/core/app/app_router/app_router.gr.dart';
+import 'domain/core/inject/injection.dart';
 
 void main() {
+  configureInjection(Environment.prod);
   runApp(MyApp());
 }
 
