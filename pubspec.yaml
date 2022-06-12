@@ -26,6 +26,10 @@ dependencies:
   freezed_annotation:
   flutter_easyloading: ^3.0.5
   json_serializable: ^6.2.0
+  path_provider: ^2.0.11
+  pdf: ^3.8.1
+  printing: ^5.9.1
+  open_file: ^3.2.1
 
 dev_dependencies:
   flutter_test:
