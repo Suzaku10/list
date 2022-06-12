@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:credibook_challange/application/home_store.dart';
+import 'package:credibook_challange/domain/core/app/app_assets.dart';
 import 'package:credibook_challange/domain/core/app/app_const.dart';
 import 'package:credibook_challange/domain/core/app/app_router/app_router.gr.dart';
 import 'package:credibook_challange/domain/core/app/app_style.dart';
@@ -72,8 +73,11 @@ class _ListMemePageState extends State<ListMemePage> {
                   constraints: const BoxConstraints(
                     maxHeight: 150,
                   ),
-                  child: Image.network(
-                    item.url!,
+                  child: FadeInImage(
+                    image: NetworkImage(
+                      item.url!,
+                    ),
+                    placeholder: const AssetImage(AppAsset.logoPng),
                     fit: BoxFit.fill,
                     width: double.infinity,
                   ),
