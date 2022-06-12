@@ -21,5 +21,12 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "detail_page": MessageLookupByLibrary.simpleMessage("Detail Page"),
+        "download_as_pdf":
+            MessageLookupByLibrary.simpleMessage("Download as PDF"),
+        "real_size": MessageLookupByLibrary.simpleMessage("Real Size"),
+        "share_to_whatsapp":
+            MessageLookupByLibrary.simpleMessage("Share To Whatsapp")
+      };
 }

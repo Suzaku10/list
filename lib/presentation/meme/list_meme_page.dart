@@ -1,6 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:credibook_challange/application/home_store.dart';
 import 'package:credibook_challange/domain/core/app/app_const.dart';
+import 'package:credibook_challange/domain/core/app/app_router/app_router.gr.dart';
 import 'package:credibook_challange/domain/core/app/app_style.dart';
+import 'package:credibook_challange/utils/i10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -56,29 +59,32 @@ class _ListMemePageState extends State<ListMemePage> {
   }
 
   Widget _memeItem(Meme item) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (item.url?.isNotEmpty == true)
-              Container(
-                constraints: const BoxConstraints(
-                  maxHeight: 150,
+    return GestureDetector(
+      onTap: () => context.router.push(DetailMemeRoute(meme: item)),
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (item.url?.isNotEmpty == true)
+                Container(
+                  constraints: const BoxConstraints(
+                    maxHeight: 150,
+                  ),
+                  child: Image.network(
+                    item.url!,
+                    fit: BoxFit.fill,
+                    width: double.infinity,
+                  ),
                 ),
-                child: Image.network(
-                  item.url!,
-                  fit: BoxFit.fill,
-                  width: double.infinity,
-                ),
-              ),
-            Text(item.name ?? '', style: AppStyle.normal16),
-            Text(
-              'Real Size : ${item.height} x ${item.width}',
-              style: AppStyle.italic12,
-            )
-          ],
+              Text(item.name ?? '', style: AppStyle.normal16),
+              Text(
+                '${I10n.current.real_size} : ${item.height} x ${item.width}',
+                style: AppStyle.italic12,
+              )
+            ],
+          ),
         ),
       ),
     );

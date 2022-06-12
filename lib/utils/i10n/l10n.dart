@@ -49,6 +49,46 @@ class I10n {
   static I10n? maybeOf(BuildContext context) {
     return Localizations.of<I10n>(context, I10n);
   }
+
+  /// `Share To Whatsapp`
+  String get share_to_whatsapp {
+    return Intl.message(
+      'Share To Whatsapp',
+      name: 'share_to_whatsapp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download as PDF`
+  String get download_as_pdf {
+    return Intl.message(
+      'Download as PDF',
+      name: 'download_as_pdf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Detail Page`
+  String get detail_page {
+    return Intl.message(
+      'Detail Page',
+      name: 'detail_page',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Real Size`
+  String get real_size {
+    return Intl.message(
+      'Real Size',
+      name: 'real_size',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {
@@ -57,7 +97,6 @@ class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'id'),
     ];
   }
 

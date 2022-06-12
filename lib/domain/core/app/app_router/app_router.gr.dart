@@ -16,6 +16,7 @@ import 'package:flutter/material.dart' as _i5;
 import '../../../../presentation/meme/detail_meme_page.dart' as _i3;
 import '../../../../presentation/meme/list_meme_page.dart' as _i2;
 import '../../../../presentation/splash/splash_page.dart' as _i1;
+import '../../../meme/meme_response.dart' as _i6;
 
 class AppRouter extends _i4.RootStackRouter {
   AppRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
@@ -32,8 +33,10 @@ class AppRouter extends _i4.RootStackRouter {
           routeData: routeData, child: const _i2.ListMemePage());
     },
     DetailMemeRoute.name: (routeData) {
+      final args = routeData.argsAs<DetailMemeRouteArgs>();
       return _i4.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.DetailMemePage());
+          routeData: routeData,
+          child: _i3.DetailMemePage(key: args.key, meme: args.meme));
     }
   };
 
@@ -63,9 +66,24 @@ class ListMemeRoute extends _i4.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.DetailMemePage]
-class DetailMemeRoute extends _i4.PageRouteInfo<void> {
-  const DetailMemeRoute()
-      : super(DetailMemeRoute.name, path: '/detail-meme-page');
+class DetailMemeRoute extends _i4.PageRouteInfo<DetailMemeRouteArgs> {
+  DetailMemeRoute({_i5.Key? key, required _i6.Meme meme})
+      : super(DetailMemeRoute.name,
+            path: '/detail-meme-page',
+            args: DetailMemeRouteArgs(key: key, meme: meme));
 
   static const String name = 'DetailMemeRoute';
+}
+
+class DetailMemeRouteArgs {
+  const DetailMemeRouteArgs({this.key, required this.meme});
+
+  final _i5.Key? key;
+
+  final _i6.Meme meme;
+
+  @override
+  String toString() {
+    return 'DetailMemeRouteArgs{key: $key, meme: $meme}';
+  }
 }
