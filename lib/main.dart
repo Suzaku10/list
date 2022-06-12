@@ -1,5 +1,6 @@
 import 'package:credibook_challange/utils/i10n/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'domain/core/app/app_const.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      builder: EasyLoading.init(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         I10n.delegate,
