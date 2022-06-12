@@ -2,6 +2,10 @@
 
 Test For Credibook
 
+[link to APK](https://api.codemagic.io/artifacts/2e97f54f-05c1-4d50-b37a-6d1c398841d3/a7a0c6d5-ab9e-4115-9456-e6da6569acc8/app-prod-release-universal.apk)
+or via
+[google drive](https://drive.google.com/file/d/1106aQwitRjhVYa6iAz-UHzglz97BdJ56/view?usp=sharing)
+
 ## Getting Started (Requirement)
 - Flutter 3.0.1
 - Dart version 2.17.1
