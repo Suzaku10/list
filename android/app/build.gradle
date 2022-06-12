@@ -52,6 +52,25 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions 'flavor-type'
+
+    productFlavors {
+        dev {
+            dimension 'flavor-type'
+            applicationIdSuffix '.dev'
+            versionNameSuffix '-DEV'
+            manifestPlaceholders = [
+                    appName: 'Credibook Test Dev',
+            ]
+        }
+        prod {
+            dimension 'flavor-type'
+            manifestPlaceholders = [
+                    appName: 'Credibook Test',
+            ]
+        }
+    }
 }
 
 flutter {
